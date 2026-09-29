@@ -1,0 +1,6 @@
+# La imagen de vista previa la genera Next como un archivo sin extensión
+# (/opengraph-image). Sin este encabezado, Cloudflare Pages la sirve como
+# application/octet-stream y WhatsApp descarta la miniatura.
+/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600

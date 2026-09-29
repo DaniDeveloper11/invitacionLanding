@@ -4,13 +4,19 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
 import { StudioDemo } from '@/components/StudioDemo'
-import { site } from '@/config/site'
+import { ogBase, site } from '@/config/site'
 
 export const metadata = {
   title: 'Programa de revendedores para foto estudios',
   description:
     'Venda la invitación digital con su marca y quédese con hasta el 44% de margen. Precios de mayoreo, extras y condiciones para foto estudios.',
+  // Sin esto hereda el canonical del layout ('/') y Google trata esta página
+  // como duplicado de la portada.
+  alternates: {
+    canonical: '/revendedores',
+  },
   openGraph: {
+    ...ogBase,
     title: 'Programa de revendedores para foto estudios',
     description:
       'Venda la invitación digital con su marca y quédese con hasta el 44% de margen.',

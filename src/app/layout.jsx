@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { site } from '@/config/site'
+import { ogBase, site } from '@/config/site'
 import '@/styles/tailwind.css'
 
 // Las fuentes se piden desde el navegador con un <link>, no con next/font:
@@ -31,10 +31,8 @@ export const metadata = {
   // Lo que arma la tarjeta al pegar el enlace en WhatsApp, Facebook e
   // Instagram: todos leen Open Graph.
   openGraph: {
-    type: 'website',
-    locale: 'es_MX',
+    ...ogBase,
     url: '/',
-    siteName: site.brand,
     title: site.compartir.titulo,
     description: site.compartir.descripcion,
   },
@@ -42,6 +40,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: site.compartir.titulo,
     description: site.compartir.descripcion,
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
