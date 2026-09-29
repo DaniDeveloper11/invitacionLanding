@@ -7,6 +7,11 @@ export const site = {
     'https://wa.me/523314857062?text=Hola%2C%20quiero%20una%20invitaci%C3%B3n%20digital.%20Mi%20evento%20es%20el%3A',
   // Enlace a una invitación de muestra.
   ejemplo: '#ejemplo',
+  // WhatsApp con el mensaje de foto estudios, para la página de revendedores.
+  whatsappEstudios:
+    'https://wa.me/523314857062?text=Hola%2C%20tengo%20un%20foto%20estudio%20y%20quiero%20los%20precios%20de%20revendedor.',
+  // Folleto del programa, en public/.
+  folleto: '/folleto-revendedores.pdf',
   // TODO: dominio definitivo. Debe ser absoluto y con https: WhatsApp y
   // Facebook no leen rutas relativas al generar la vista previa.
   url: 'https://invitaciones.example.mx',

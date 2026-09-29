@@ -34,8 +34,14 @@ export function Footer() {
             <p className="mt-2 text-sm text-ink-muted">
               Invitaciones digitales a la medida en {site.ciudad}
             </p>
-            <nav className="mt-10 flex flex-wrap gap-8">
+            <nav className="mt-10 flex flex-wrap items-center gap-8">
               <NavLinks />
+              <Link
+                href="/revendedores"
+                className="text-sm text-ink-soft transition-colors hover:text-ink"
+              >
+                Para foto estudios
+              </Link>
             </nav>
           </div>
           <div className="group relative flex items-center gap-6 self-stretch border border-rule p-6 transition-colors hover:border-ink sm:self-auto lg:w-80">
