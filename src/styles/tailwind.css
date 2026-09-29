@@ -2,13 +2,6 @@
 
 @plugin '@tailwindcss/forms';
 
-/* La display en itálica es una familia aparte (ver src/app/layout.jsx). */
-@layer base {
-  .font-display .italic,
-  .font-display.italic {
-    font-family: var(--font-cormorant-italic);
-  }
-}
 
 @theme {
   --text-*: initial;
@@ -70,9 +63,9 @@
   --color-cream-soft: #f0eae1;
   --color-cream-muted: #c4bcb0;
 
-  --font-sans: var(--font-karla);
-  --font-display: var(--font-cormorant);
-  --font-script: var(--font-great-vibes);
+  --font-sans: 'Karla', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Great Vibes', 'Cormorant Garamond', cursive;
 
   --container-2xl: 40rem;
 

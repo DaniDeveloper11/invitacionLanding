@@ -1,39 +1,17 @@
-import { Cormorant_Garamond, Great_Vibes, Karla } from 'next/font/google'
 import clsx from 'clsx'
 
 import { site } from '@/config/site'
 import '@/styles/tailwind.css'
 
-const karla = Karla({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-karla',
-})
-
-// Turbopack sólo acepta una combinación peso/estilo por llamada, así que la
-// itálica se carga aparte y se aplica desde tailwind.css.
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['500', '600'],
-  variable: '--font-cormorant',
-})
-
-const cormorantItalic = Cormorant_Garamond({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['500'],
-  style: 'italic',
-  variable: '--font-cormorant-italic',
-})
-
-// Caligrafía sólo para los nombres de la invitación de muestra.
-const greatVibes = Great_Vibes({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '400',
-  variable: '--font-great-vibes',
-})
+// Las fuentes se piden desde el navegador con un <link>, no con next/font:
+// next/font las descarga durante el build y el servidor de despliegue no
+// siempre puede salir a fonts.gstatic.com, lo que rompe `next build`.
+const FUENTES =
+  'https://fonts.googleapis.com/css2' +
+  '?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500' +
+  '&family=Great+Vibes' +
+  '&family=Karla:wght@400;500;700' +
+  '&display=swap'
 
 const titulo = `Invitaciones digitales a la medida para bodas y XV | ${site.ciudad}`
 const descripcion =
@@ -73,16 +51,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="es"
-      className={clsx(
-        'bg-cream antialiased',
-        karla.variable,
-        cormorant.variable,
-        cormorantItalic.variable,
-        greatVibes.variable,
-      )}
-    >
+    <html lang="es" className={clsx('bg-cream antialiased')}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="stylesheet" href={FUENTES} />
+      </head>
       <body>{children}</body>
     </html>
   )
