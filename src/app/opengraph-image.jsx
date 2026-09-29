@@ -6,6 +6,7 @@ export const alt =
   'Invitaciones digitales a la medida para bodas y XV años. Desde $1,600, lista en 3 días, sin costo por invitado.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
+export const dynamic = 'force-static'
 
 const datos = ['Desde $1,600', 'Lista en 3 días', 'Sin costo por invitado']
 
