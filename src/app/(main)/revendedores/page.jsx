@@ -2,6 +2,8 @@ import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { PhoneFrame } from '@/components/PhoneFrame'
+import { StudioDemo } from '@/components/StudioDemo'
 import { site } from '@/config/site'
 
 export const metadata = {
@@ -171,38 +173,55 @@ function SectionTitle({ kicker, children, className }) {
 export default function Revendedores() {
   return (
     <>
-      <section className="py-20 sm:py-24">
+      <section className="overflow-hidden py-20 sm:py-24">
         <Container>
-          <div className="flex items-center gap-4">
-            <span aria-hidden="true" className="h-px w-14 bg-gold" />
-            <p className="text-xs font-bold tracking-[0.26em] text-gold-dark uppercase">
-              Programa de revendedores · Foto estudios
-            </p>
-          </div>
-          <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.04] font-medium tracking-tight text-pretty text-ink sm:text-6xl lg:text-[4.5rem]">
-            Usted la vende. Yo la hago. Se queda con{' '}
-            <span className="text-wine italic">hasta el 44% de margen</span>.
-          </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            Cada invitación se diseña desde cero para ese evento: sus colores,
-            su tipografía, su concepto. No uso plantillas. Sale sin mi marca —
-            el pie de página puede llevar la de su estudio.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Button href={site.whatsappEstudios} color="wine">
-              Pedir precios de estudio
-            </Button>
-            <Button
-              href={site.folleto}
-              variant="outline"
-              color="ink"
-              download
-              target="_blank"
-              rel="noopener"
-            >
-              <DownloadIcon className="h-5 w-5 flex-none" />
-              <span className="ml-2.5">Descargar folleto (PDF)</span>
-            </Button>
+          <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
+            <div className="lg:col-span-7 xl:col-span-6">
+              <div className="flex items-center gap-4">
+                <span aria-hidden="true" className="h-px w-14 bg-gold" />
+                <p className="text-xs font-bold tracking-[0.26em] text-gold-dark uppercase">
+                  Programa de revendedores · Foto estudios
+                </p>
+              </div>
+              <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.04] font-medium tracking-tight text-pretty text-ink sm:text-6xl lg:text-[4.5rem]">
+                Usted la vende. Yo la hago. Se queda con{' '}
+                <span className="text-wine italic">hasta el 44% de margen</span>
+                .
+              </h1>
+              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
+                Cada invitación se diseña desde cero para ese evento: sus
+                colores, su tipografía, su concepto. No uso plantillas. Sale sin
+                mi marca — el pie de página puede llevar la de su estudio.
+              </p>
+              <div className="mt-9 flex flex-wrap gap-4">
+                <Button href={site.whatsappEstudios} color="wine">
+                  Pedir precios de estudio
+                </Button>
+                <Button
+                  href={site.folleto}
+                  variant="outline"
+                  color="ink"
+                  download
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <DownloadIcon className="h-5 w-5 flex-none" />
+                  <span className="ml-2.5">Descargar folleto (PDF)</span>
+                </Button>
+              </div>
+              <p className="mt-10 max-w-lg border-t border-rule pt-6 text-sm leading-relaxed text-ink-muted lg:mt-12">
+                Así la ve su cliente: con el nombre de su estudio en la portada
+                y en la firma. La mía no aparece en ningún lado.
+              </p>
+            </div>
+
+            <div className="relative mt-14 lg:col-span-5 lg:mt-0 xl:col-span-6">
+              <div className="-mx-4 h-[520px] mask-[linear-gradient(to_bottom,white_88%,transparent)] px-9 sm:mx-0 lg:h-[560px] lg:px-0">
+                <PhoneFrame className="mx-auto max-w-[340px]">
+                  <StudioDemo />
+                </PhoneFrame>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
